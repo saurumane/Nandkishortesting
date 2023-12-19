@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block baseblock%}
+<h2 align="center"> User Information</h2>
+{%if user_list%}
+<table align="center" border="3px">
+
+    <thead>
+    <th>id</th>
+    <th>username</th>
+    <th>usercity</th>
+    <th>useremail</th>
+    <th>userphone</th>
+    <th>Operations</th>
+
+
+
+    </thead>
+    {%for row in user_list%}
+    <tr>
+        <td>{{row.id}}</td>
+         <td>{{row.username}}</td>
+         <td>{{row.usercity}}</td>
+         <td>{{row.useremail}}</td>
+        <td>{{row.userphone}}</td>
+        <td><a href="/user/update/{{row.id}}" class ="btn btn-success">Update</a></td>
+        <td><a href="/user/delete/{{row.id}}" class ="btn btn-primary btn-lg">Delete</a> </td>
+    </tr>
+    {%endfor%}
+</table>
+<br><br>
+<div class="container" align="center">
+<a href="/insert/user" class ="btn btn-primary btn-lg">Insert New User</a>
+</div>
+
+{%else%}
+<h1>data insufficient</h1>]
+{%endif%}
+{%endblock%}
+</body>
+</html>

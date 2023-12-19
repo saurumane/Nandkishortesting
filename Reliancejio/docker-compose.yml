@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    expose:
+      - "8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+
+  db:
+    build: ./db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: python8
+      MYSQL_USER: MYSQL_ROOT_PASSWORD
+      MYSQL_PASSWORD: root
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+
+

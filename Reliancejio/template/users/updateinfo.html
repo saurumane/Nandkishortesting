@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block baseblock%}
+<div class="container" align="center">
+    <h2> Update User Information</h2>
+    <form method="post">
+
+        {%csrf_token%}
+        Use_Id:<input type="text" name="id" value="{{row.id}}">
+        <p></p>
+        USER NAME:<input type="text" name="username" value="{{row.username}}">
+        <p></p>
+        USER CITY:<input type="text" name="usercity" value="{{row.usercity}}">
+        <p></p>
+        USER EMAIL:<input type="text" name="useremail" value="{{row.useremail}}">
+        <p></p>
+        USER PHONE:<input type="text" name="userphone" value="{{row.userphone}}">
+        <p></p>
+        <input type="submit" name="submit" value="submit">
+    </form>
+</div>
+{%endblock%}
+</body>
+</html>

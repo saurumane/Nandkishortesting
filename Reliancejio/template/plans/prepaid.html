@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block baseblock%}
+<h1 align="center"> welcome to prepaid plans</h1>
+{%if plan_list%}
+<table align="center" border="2px">
+    <thead>
+    <th>planid</th>
+    <th>planname</th>
+    <th>plandetails</th>
+    <th>planamount</th>
+    </thead>
+    {%for row in plan_list%}
+    <tr>
+        <td>{{row.planid}}</td>
+         <td>{{row.planname}}</td>
+         <td>{{row.plandetails}}</td>
+         <td>{{row.planamount}}</td>
+    </tr>
+    {%endfor%}
+
+{%else%}
+<h1>data insufficient</h1>]
+</table>
+{%endif%}
+{%endblock%}
+</body>
+</html>

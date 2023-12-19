@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{%block baseblock%}
+<div class="container" align="center">
+    <h2>enter new user information</h2>
+<form method="post">
+        {{form.as_p}}
+    {%csrf_token%}
+    <input type="submit" name="" value="submit">
+</form>
+</div>
+{%endblock%}
+</body>
+</html>
